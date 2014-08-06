@@ -55,7 +55,7 @@ public class ArgumentProcessor extends AbstractProcessor {
 
         for (Map.Entry<Element, List<Element>> entry : wrappedFragments.entrySet()) {
             String fqWrapperClassName =
-                    new StringBuilder(className(entry.getKey())).append("$$").append("FragmentWrapper").toString();
+                    new StringBuilder(className(entry.getKey())).append("$$").append("ArgumentWrapper").toString();
             try {
                 List<FieldAdapter> adapters = new LinkedList<FieldAdapter>();
                 for (Element field : entry.getValue()) {

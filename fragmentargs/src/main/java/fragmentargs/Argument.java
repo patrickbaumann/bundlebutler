@@ -12,6 +12,9 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
 @Retention(CLASS)
 @Target(FIELD)
 public @interface Argument {
-    String value();
+
+    String UNDEFINED = "";
+
+    String value() default UNDEFINED;
 
 }

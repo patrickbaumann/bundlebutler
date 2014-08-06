@@ -23,6 +23,7 @@
 
     <modules>
         <module>fragmentargs</module>
+        <module>fragmentargs-it</module>
     </modules>
 
     <properties>
@@ -31,6 +32,10 @@
         <java.version>1.6</java.version>
         <android.version>4.1.1.4</android.version>
         <android.platform>16</android.platform>
+        <junit.version>4.10</junit.version>
+        <robolectric.version>2.2</robolectric.version>
+        <compile-test.version>0.5</compile-test.version>
+
     </properties>
 
     <dependencyManagement>
@@ -39,6 +44,21 @@
                 <groupId>com.google.android</groupId>
                 <artifactId>android</artifactId>
                 <version>${android.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.robolectric</groupId>
+                <artifactId>robolectric</artifactId>
+                <version>${robolectric.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.testing.compile</groupId>
+                <artifactId>compile-testing</artifactId>
+                <version>${compile-test.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
