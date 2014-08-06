@@ -1,6 +1,6 @@
-package fragmentargs.internal;
+package bundlebutler.internal;
 
-import fragmentargs.Argument;
+import bundlebutler.Argument;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;

@@ -1,15 +1,15 @@
-package fragmentargs;
+package bundlebutler;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import fragmentargs.internal.ArgumentWrapper;
+import bundlebutler.internal.ArgumentWrapper;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public final class FragmentArgs {
+public final class BundleButler {
 
-    private FragmentArgs() {
+    private BundleButler() {
     }
 
     private static final Map<Class<Fragment>, ArgumentWrapper> ARGUMENT_WRAPPERS =

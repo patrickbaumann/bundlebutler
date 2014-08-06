@@ -1,8 +1,8 @@
-package fragmentargs.internal;
+package bundlebutler.internal;
 
 import com.sun.tools.javac.code.Type;
 import com.sun.tools.javac.util.List;
-import fragmentargs.Argument;
+import bundlebutler.Argument;
 
 import javax.lang.model.element.Element;
 import java.io.IOException;

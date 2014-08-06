@@ -1,4 +1,4 @@
-package fragmentargs;
+package bundlebutler;
 
 import android.os.Bundle;
 import junit.framework.Assert;
@@ -17,20 +17,20 @@ public class PrimitiveTest {
         PrimitivesFragment fragment = new PrimitivesFragment();
 
         fragment.pLong = 5L;
-        FragmentArgs.saveArgs(fragment);
+        BundleButler.saveArgs(fragment);
         Assert.assertEquals("saveArgs should store latest value.", 5L, fragment.getArguments().getLong(PrimitivesFragment.KEY_LONG));
 
         fragment.pLong = 7L;
         Bundle state = new Bundle();
-        FragmentArgs.saveState(fragment, state);
+        BundleButler.saveState(fragment, state);
         Assert.assertEquals("saveState should store to state bundle", 7L, state.getLong(PrimitivesFragment.KEY_LONG));
 
         state.putLong(PrimitivesFragment.KEY_LONG, 10L);
-        FragmentArgs.loadArgsWithState(fragment, state);
+        BundleButler.loadArgsWithState(fragment, state);
         Assert.assertEquals("loadArgsWithState with state should override args and default", 10L, fragment.pLong);
 
         fragment.pLong = 13L;
-        FragmentArgs.loadArgsWithState(fragment, null);
+        BundleButler.loadArgsWithState(fragment, null);
         Assert.assertEquals("loadArgsWithState with no state should reset to arg value", 5L, fragment.pLong);
 
     }
@@ -46,7 +46,7 @@ public class PrimitiveTest {
         fragment.pInt = 99;
         fragment.pLong = 50L;
 
-        FragmentArgs.saveArgs(fragment);
+        BundleButler.saveArgs(fragment);
 
         Bundle arguments = fragment.getArguments();
 

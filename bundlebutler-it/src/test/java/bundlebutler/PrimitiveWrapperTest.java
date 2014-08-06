@@ -1,4 +1,4 @@
-package fragmentargs;
+package bundlebutler;
 
 import android.os.Bundle;
 import junit.framework.Assert;
@@ -17,28 +17,28 @@ public class PrimitiveWrapperTest {
         PrimitiveWrapperFragments fragment = new PrimitiveWrapperFragments();
 
         fragment.pLong = null;
-        FragmentArgs.saveArgs(fragment);
+        BundleButler.saveArgs(fragment);
         Assert.assertFalse("saveArgs should store latest value.", fragment.getArguments().containsKey(PrimitiveWrapperFragments.KEY_LONG));
 
         fragment.pLong = 5L;
-        FragmentArgs.saveArgs(fragment);
+        BundleButler.saveArgs(fragment);
         Assert.assertEquals("saveArgs should store latest value.", 5L, fragment.getArguments().getLong(PrimitiveWrapperFragments.KEY_LONG));
 
         fragment.pLong = 7L;
         Bundle state = new Bundle();
-        FragmentArgs.saveState(fragment, state);
+        BundleButler.saveState(fragment, state);
         Assert.assertEquals("saveState should store to state bundle", 7L, state.getLong(PrimitiveWrapperFragments.KEY_LONG));
 
         state.putLong(PrimitiveWrapperFragments.KEY_LONG, 10L);
-        FragmentArgs.loadArgsWithState(fragment, state);
+        BundleButler.loadArgsWithState(fragment, state);
         Assert.assertEquals("loadArgsWithState with state should override args and default", Long.valueOf(10L), fragment.pLong);
 
         fragment.pLong = 13L;
-        FragmentArgs.loadArgsWithState(fragment, null);
+        BundleButler.loadArgsWithState(fragment, null);
         Assert.assertEquals("loadArgsWithState with no state should reset to arg value", Long.valueOf(5L), fragment.pLong);
 
         fragment.pLong = 13L;
-        FragmentArgs.loadArgsWithState(fragment, new Bundle());
+        BundleButler.loadArgsWithState(fragment, new Bundle());
         Assert.assertEquals("loadArgsWithState with state having undefined key should reset to arg value", Long.valueOf(5L), fragment.pLong);
 
     }
@@ -54,7 +54,7 @@ public class PrimitiveWrapperTest {
         fragment.pInt = 99;
         fragment.pLong = 50L;
 
-        FragmentArgs.saveArgs(fragment);
+        BundleButler.saveArgs(fragment);
 
         Bundle arguments = fragment.getArguments();
 

@@ -12,18 +12,18 @@
     </parent>
 
     <groupId>com.patrickbaumann</groupId>
-    <artifactId>fragmentargs-parent</artifactId>
+    <artifactId>bundlebutler-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Fragment Args (Parent)</name>
-    <description>Fragment argument and saved instance state helper.</description>
-    <url>http://github.com/patrickbaumann/fragmentargs/</url>
+    <name>Bundle Butler (Parent)</name>
+    <description>Bundle butler simplifies arguments and state in Android Fragments.</description>
+    <url>http://github.com/patrickbaumann/bundlebutler/</url>
     <inceptionYear>2014</inceptionYear>
 
     <modules>
-        <module>fragmentargs</module>
-        <module>fragmentargs-it</module>
+        <module>bundlebutler</module>
+        <module>bundlebutler-it</module>
     </modules>
 
     <properties>
